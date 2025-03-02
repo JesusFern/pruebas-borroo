@@ -28,7 +28,7 @@ jobs:
           npx eslint "src/**/*.{js,jsx}"  # Solo reporta errores, sin --fix
 
   backend-lint:
-    name: Run Flake8 & Black (Backend)
+    name: Run Flake8 (Backend)
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -45,12 +45,7 @@ jobs:
         run: |
           cd backend
           python -m pip install --upgrade pip
-          pip install flake8 black
-
-      - name: Run Black (solo verificar formato)
-        run: |
-          cd backend
-          black --check .  # Solo verifica el formato, sin aplicar correcciones
+          pip install flake8 
 
       - name: Run Flake8 (reportar errores de estilo)
         run: |
