@@ -74,7 +74,7 @@ jobs:
           git pull origin ${{ github.ref_name }} --rebase
           git push origin HEAD:${{ github.ref_name }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}  # Usar el token de acceso personal
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: Run Flake8 (solo para reportar errores restantes)
         run: |
